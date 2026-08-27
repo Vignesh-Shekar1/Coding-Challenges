@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int findContentChildren(vector<int>& g, vector<int>& s) {
+        sort(g.begin(), g.end()), sort(s.begin(), s.end());
+        int left = 0, right = 0;
+        while (right < s.size() && left < g.size()){
+            if (s[right] >= g[left]) ++left; 
+            ++right;
+        }
+        return left;
+    }
+};
